@@ -17,5 +17,5 @@ jobs:
       BUILD_NUMBER: $(date +%Y%m%d%H%M%S)
     steps:
       - run: |
-        echo "${RELEASE_TAG}"
-        echo "${BUILD_NUMBER}"
+          echo "${RELEASE_TAG}"
+          echo "${BUILD_NUMBER}"
