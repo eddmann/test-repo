@@ -1,0 +1,16 @@
+name: main
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The release tag to deploy'
+        required: true
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ github.event.inputs.tag }}
+    steps:
+      - run: echo "${RELEASE_TAG}"
