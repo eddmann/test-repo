@@ -14,5 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RELEASE_TAG: ${{ github.event.release.tag_name || github.event.inputs.tag }}
+      BUILD_NUMBER: $(date +%Y%m%d%H%M%S)
     steps:
-      - run: echo "${RELEASE_TAG}"
+      - run: |
+        echo "${RELEASE_TAG}"
+        echo "${BUILD_NUMBER}"
